@@ -43,6 +43,13 @@
 								}
 							}'
                                         ));
+                                       //i'm adding this line
+                                       // $content = Content::model()->findByAttributes(array('object_id'=>$link->id));
+                                       //     if ($content->visibility == 1) {
+                                       //         echo CHtml::link('<i class="fa fa-reply"></i>', array('//linklist/linklist/unShareLink','content_id' => $content->id,Yii::app()->getController()->guidParamName => Yii::app()->getController()->contentContainer->guid), array('title' => 'UnPublish link', 'class' => 'btn btn-xs btn-primary')) . ' ';
+                                       //     } else {
+                                                echo CHtml::link('<i class="fa fa-share"></i>', array('//linklist/linklist/shareLink','content_id' => $content->id,Yii::app()->getController()->guidParamName => Yii::app()->getController()->contentContainer->guid), array('title' => 'Publish link', 'class' => 'btn btn-xs btn-primary')) . ' ';
+                                            }
                                         echo CHtml::link('<i class="fa fa-pencil"></i>', array('//linklist/linklist/editCategory', 'category_id' => $category->id, Yii::app()->getController()->guidParamName => Yii::app()->getController()->contentContainer->guid), array('title' => 'Edit Category', 'class' => 'btn btn-xs btn-primary')). ' ';
                                     }
                                     // all users may add a link to an existing category
