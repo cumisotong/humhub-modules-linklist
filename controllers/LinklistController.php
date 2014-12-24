@@ -285,6 +285,31 @@ class LinklistController extends ContentContainerController
 		$this->redirect(Yii::app()->createUrl('linklist/linklist/showlinklist', array ($this->guidParamName => $this->contentContainer->guid)));
 	}
 	
+  /*public function actionShareLink() {
+        $this->checkContainerAccess();
+        $content = Content::model()->findByPk($_GET['content_id']);
+        $user = Yii::app()->user->id;
+        if ($content->space_id == null) {
+            Content::model()->updateAll(array('visibility' => 1), 'object_model="Link" and user_id=' . $user . ' and object_id=' . $content->object_id);
+            $this->redirect(Yii::app()->request->baseUrl . '/index.php?r=dashboard/dashboard');
+        } else {
+            Content::model()->updateAll(array('visibility' => 1), 'object_model="Link" and space_id=' . $content->space_id . ' and object_id=' . $content->object_id);
+            $this->redirect(Yii::app()->request->baseUrl . '/index.php?r=dashboard/dashboard');
+        }
+    }
+
+    public function actionUnShareLink() {
+        $this->checkContainerAccess();
+        $content = Content::model()->findByPk($_GET['content_id']);
+        $user = Yii::app()->user->id;
+        if ($content->space_id == null) {
+            Content::model()->updateAll(array('visibility' => 0), 'object_model="Link" and user_id=' . $user . ' and space_id is NULL and object_id=' . $content->object_id);
+            $this->redirect(Yii::app()->request->baseUrl . '/index.php?r=dashboard/dashboard');
+        } else {
+            Content::model()->updateAll(array('visibility' => 0), 'object_model="Link" and space_id=' . $content->space_id . ' and object_id=' . $content->object_id);
+            $this->redirect(Yii::app()->request->baseUrl . '/index.php?r=dashboard/dashboard');
+        }
+    }*/
 	/**
 	 * Space Configuration Action for Admins
 	 */
